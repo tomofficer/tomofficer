@@ -1,0 +1,23 @@
+@keyframes zoomInOut {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.3);
+    /* Adjust the scale factor for the desired zoom-out effect */
+  }
+}
+
+.animate__animated {
+  animation-name: zoomInOut;
+  /* Use the name of your animation */
+  animation-duration: 5s;
+  /* Adjust the duration for the desired speed */
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  /* Set as needed */
+  animation-direction: alternate;
+  /* Reverse the animation on each iteration */
+}
+
