@@ -13,6 +13,7 @@ import Project3Mobile from './components/Project3Mobile';
 import Contact from './components/Contact';
 import ContactMobile from './components/ContactMobile';
 import Footer from './components/Footer';
+import FooterMobile from './components/FooterMobile';
 
 function App() {
   //useRef
@@ -129,7 +130,7 @@ function App() {
           <Contact contact2Ref={scrollToContact2Ref} />
         )}
 
-        <Footer />
+        {windowWidth < breakpoint ? <FooterMobile /> : <Footer />}
       </Box>
     </ChakraProvider>
   );
