@@ -6,13 +6,12 @@ const Project1 = ({ project1Ref, scrollToProject2 }) => {
       <section id="Project1">
         <Box borderTop="10px solid #F6E05E" ref={project1Ref}></Box>
         <Box
-          h="85vh"
           bgImage={`url(${graipfrutBg})`}
           bgSize="cover"
           bgPosition="center"
           bgRepeat="no-repeat"
-          // width="100%"
-          height="85vh"
+          width="100%"
+          height="95vh"
           opacity="100%"
           position="relative" // Set a relative position
           zIndex="1" // Ensure the background image is at the back
@@ -21,7 +20,7 @@ const Project1 = ({ project1Ref, scrollToProject2 }) => {
           <Box top="30%" left="50%" position="relative" zIndex="2">
             <VStack align={'left'} spacing="30px" color="yellow.300">
               <Heading fontFamily="Oswald" fontSize="50px">
-                GRAIPFRUT
+                S GRAIPFRUT
               </Heading>
               <Text fontFamily="Montserrat" fontSize="18px" maxW="500px">
                 CEO / Owner. <br />
