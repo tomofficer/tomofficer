@@ -2,8 +2,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import { ChakraProvider, theme, Box } from '@chakra-ui/react';
 import Landing from './components/Landing';
 import LandingMobile from './components/LandingMobile';
-
 import About from './components/About';
+import AboutMobile from './components/AboutMobile';
 import Project1 from './components/Project1';
 import Project2 from './components/Project2';
 import Project3 from './components/Project3';
@@ -69,10 +69,18 @@ function App() {
           <Landing scrollToAbout={scrollToAboutHandle} />
         )}
 
-        <About
-          aboutRef={scrollToAboutRef}
-          scrollToProject1={scrollToProject1Handle}
-        />
+        {windowWidth < breakpoint ? (
+          <AboutMobile
+            aboutRef={scrollToAboutRef}
+            scrollToProject1={scrollToProject1Handle}
+          />
+        ) : (
+          <About
+            aboutRef={scrollToAboutRef}
+            scrollToProject1={scrollToProject1Handle}
+          />
+        )}
+
         <Project1
           project1Ref={scrollToProject1Ref}
           scrollToProject2={scrollToProject2Handle}

@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  useColorModeValue,
   Box,
   Button,
   VStack,
@@ -8,16 +7,17 @@ import {
   Text,
   Flex,
   Image,
+  Center,
 } from '@chakra-ui/react';
 
-const About = ({ aboutRef, scrollToProject1 }) => {
+const AboutMobile = ({ aboutRef, scrollToProject1 }) => {
   return (
     <section id="About">
       {/* Container for the component */}
       <Box ref={aboutRef}></Box>
       <Box
         borderTop="10px solid #4DB6AC"
-        h="85vh"
+        h="94vh"
         style={{
           backgroundImage: 'linear-gradient(to right, #555, black)',
           backgroundSize: 'cover',
@@ -27,8 +27,8 @@ const About = ({ aboutRef, scrollToProject1 }) => {
         }}
       >
         {/* Content of the component */}
-        <Box ml="200px" mt="200px">
-          <VStack align={'left'} spacing="30px" color="teal.300">
+        <Box ml="20px" mt="20px" textAlign="left">
+          <VStack align={'left'} spacing="20px" color="teal.300">
             <Heading fontFamily="Oswald" fontSize="50px">
               HI, I'M TOM.
             </Heading>
@@ -39,12 +39,12 @@ const About = ({ aboutRef, scrollToProject1 }) => {
             </Text>
 
             <Button
-              maxW="300px"
+              maxW="150px"
               mt="10px"
               bg="none"
               border="2px solid"
               rounded="68px"
-              px="40px"
+              px="60px"
               py="25px"
               lineHeight="30px"
               _hover={{
@@ -68,12 +68,12 @@ const About = ({ aboutRef, scrollToProject1 }) => {
           position="absolute"
           bottom="0px" // Adjust as needed to position the image
           right="0px" // Adjust as needed to position the image
-          maxW="37%" // Adjust 4he width as needed
-          alt="Tom's selfie"
+          maxW="100%" // Adjust 4he width as needed
+          alt="Tom Officer Profile Pic"
         />
       </Box>
     </section>
   );
 };
 
-export default About;
+export default AboutMobile;
