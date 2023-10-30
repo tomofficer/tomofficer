@@ -39,6 +39,7 @@ const AboutMobile = ({ aboutRef, scrollToProject1 }) => {
             </Text>
 
             <Button
+              zIndex="1"
               maxW="150px"
               mt="10px"
               bg="none"

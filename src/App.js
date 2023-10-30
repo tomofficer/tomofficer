@@ -5,6 +5,7 @@ import LandingMobile from './components/LandingMobile';
 import About from './components/About';
 import AboutMobile from './components/AboutMobile';
 import Project1 from './components/Project1';
+import Project1Mobile from './components/Project1Mobile';
 import Project2 from './components/Project2';
 import Project3 from './components/Project3';
 import Contact from './components/Contact';
@@ -21,10 +22,12 @@ function App() {
   //scroll handlers
   const scrollToAboutHandle = () => {
     scrollToAboutRef.current.scrollIntoView({ behavior: 'smooth' });
+    console.log('testing the click handle');
   };
 
   const scrollToProject1Handle = () => {
     scrollToProject1Ref.current.scrollIntoView({ behavior: 'smooth' });
+    console.log('testing the click handle');
   };
 
   const scrollToProject2Handle = () => {
@@ -81,10 +84,18 @@ function App() {
           />
         )}
 
-        <Project1
-          project1Ref={scrollToProject1Ref}
-          scrollToProject2={scrollToProject2Handle}
-        />
+        {windowWidth < breakpoint ? (
+          <Project1Mobile
+            project1Ref={scrollToProject1Ref}
+            scrollToProject2={scrollToProject2Handle}
+          />
+        ) : (
+          <Project1
+            project1Ref={scrollToProject1Ref}
+            scrollToProject2={scrollToProject2Handle}
+          />
+        )}
+
         <Project2
           project2Ref={scrollToProject2Ref}
           scrollToProject3={scrollToProject3Handle}
