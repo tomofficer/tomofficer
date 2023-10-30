@@ -14,7 +14,7 @@ import {
   FaTwitter,
 } from 'react-icons/fa';
 
-const Footer2 = () => {
+const Footer = () => {
   return (
     <>
       <Box h="auto" w="100vh" bg="black" pl="200px" py="21px">
@@ -86,4 +86,4 @@ const Footer2 = () => {
   );
 };
 
-export default Footer2;
+export default Footer;

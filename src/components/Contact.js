@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   Box,
   VStack,
@@ -13,7 +12,7 @@ import {
 import { useForm, ValidationError } from '@formspree/react';
 import { AiOutlineMail } from 'react-icons/ai';
 
-const Contact2 = ({ contact2Ref }) => {
+const Contact = ({ contact2Ref }) => {
   //form state
   const [state, handleSubmit] = useForm('xvojlnrw');
   //form post-submit message
@@ -359,4 +358,4 @@ const Contact2 = ({ contact2Ref }) => {
   );
 };
 
-export default Contact2;
+export default Contact;

@@ -1,12 +1,14 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { ChakraProvider, theme, Box } from '@chakra-ui/react';
-import Landing2 from './components/Landing2';
+import Landing from './components/Landing';
+import LandingMobile from './components/LandingMobile';
+
 import About from './components/About';
 import Project1 from './components/Project1';
 import Project2 from './components/Project2';
 import Project3 from './components/Project3';
-import Contact2 from './components/Contact2';
-import Footer2 from './components/Footer2';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   //useRef
@@ -37,10 +39,36 @@ function App() {
     scrollToContact2Ref.current.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Initialize a state variable to track the screen width
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  // Add an event listener to update the windowWidth when the window is resized
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Attach the event listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // Define a breakpoint value for switching between mobile and desktop views
+  const breakpoint = 1000; // Adjust this value as needed
+
   return (
     <ChakraProvider theme={theme}>
       <Box style={{ backgroundColor: 'black' }} overflow={'hidden'}>
-        <Landing2 scrollToAbout={scrollToAboutHandle} />
+        {windowWidth < breakpoint ? (
+          <LandingMobile scrollToAbout={scrollToAboutHandle} />
+        ) : (
+          <Landing scrollToAbout={scrollToAboutHandle} />
+        )}
+
         <About
           aboutRef={scrollToAboutRef}
           scrollToProject1={scrollToProject1Handle}
@@ -57,13 +85,11 @@ function App() {
           project3Ref={scrollToProject3Ref}
           scrollToContact2={scrollToContact2Handle}
         />
-        <Contact2 contact2Ref={scrollToContact2Ref} />
-        <Footer2 />
+        <Contact contact2Ref={scrollToContact2Ref} />
+        <Footer />
       </Box>
     </ChakraProvider>
   );
 }
 
 export default App;
-
-//testing deployment

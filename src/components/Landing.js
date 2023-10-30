@@ -61,7 +61,7 @@ const fadeInOutAnimation = css`
   }
 `;
 
-const Landing2 = ({ scrollToAbout }) => {
+const Landing = ({ scrollToAbout }) => {
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
@@ -168,4 +168,4 @@ const Landing2 = ({ scrollToAbout }) => {
   );
 };
 
-export default Landing2;
+export default Landing;
