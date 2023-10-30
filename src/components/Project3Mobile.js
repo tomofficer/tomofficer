@@ -1,6 +1,5 @@
 import { Box, Text, VStack, Heading, Flex, Button } from '@chakra-ui/react';
 import whiteDogBg from '../imageAssets/project3Bg.jpg';
-import wdw from '../imageAssets/wdw1.jpg';
 
 const Project3Mobile = ({ project3Ref, scrollToContact2 }) => {
   return (

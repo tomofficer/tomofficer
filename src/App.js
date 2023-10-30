@@ -11,6 +11,7 @@ import Project2Mobile from './components/Project2Mobile';
 import Project3 from './components/Project3';
 import Project3Mobile from './components/Project3Mobile';
 import Contact from './components/Contact';
+import ContactMobile from './components/ContactMobile';
 import Footer from './components/Footer';
 
 function App() {
@@ -122,7 +123,12 @@ function App() {
           />
         )}
 
-        <Contact contact2Ref={scrollToContact2Ref} />
+        {windowWidth < breakpoint ? (
+          <ContactMobile contact2Ref={scrollToContact2Ref} />
+        ) : (
+          <Contact contact2Ref={scrollToContact2Ref} />
+        )}
+
         <Footer />
       </Box>
     </ChakraProvider>
