@@ -7,6 +7,8 @@ import AboutMobile from './components/AboutMobile';
 import Project1 from './components/Project1';
 import Project1Mobile from './components/Project1Mobile';
 import Project2 from './components/Project2';
+import Project2Mobile from './components/Project2Mobile';
+
 import Project3 from './components/Project3';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -96,10 +98,18 @@ function App() {
           />
         )}
 
-        <Project2
-          project2Ref={scrollToProject2Ref}
-          scrollToProject3={scrollToProject3Handle}
-        />
+        {windowWidth < breakpoint ? (
+          <Project2Mobile
+            project2Ref={scrollToProject2Ref}
+            scrollToProject3={scrollToProject3Handle}
+          />
+        ) : (
+          <Project2
+            project2Ref={scrollToProject2Ref}
+            scrollToProject3={scrollToProject3Handle}
+          />
+        )}
+
         <Project3
           project3Ref={scrollToProject3Ref}
           scrollToContact2={scrollToContact2Handle}

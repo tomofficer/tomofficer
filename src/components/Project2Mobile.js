@@ -1,52 +1,61 @@
-import { Box, VStack, Heading, Text, Button } from '@chakra-ui/react';
-import graipfrutBg from '../imageAssets/project1Bg.jpg';
-const Project1Mobile = ({ project1Ref, scrollToProject2 }) => {
+import { Box, Button, Text, VStack, Heading, Flex } from '@chakra-ui/react';
+import leadrproBg from '../imageAssets/project2Bg.jpg';
+
+const Project2Mobile = ({ project2Ref, scrollToProject3 }) => {
   return (
     <>
       <section id="Project1">
-        <Box borderTop="10px solid #F6E05E" ref={project1Ref}></Box>
+        <Box borderTop="10px solid #9F7AEA" ref={project2Ref}></Box>
         <Box
-          h="90vh"
-          bgImage={`url(${graipfrutBg})`}
+          bgImage={`url(${leadrproBg})`}
           bgSize="cover"
+          bgPosition="center"
           bgRepeat="no-repeat"
+          height="90vh"
           opacity="100%"
           position="relative" // Set a relative position
           zIndex="1" // Ensure the background image is at the back
         >
           {/* Text and button content */}
           <Box
-            top="30%"
+            top="35%"
             left="0%"
             position="relative"
             zIndex="2"
+            color="white"
             background="rgba(0, 0, 0, 0.7)"
             px="20px"
             pb="30px"
             pt="10px"
           >
-            <VStack spacing="20px" color="yellow.300" align="left">
+            <VStack spacing="20px" align="left">
               <Heading fontFamily="Oswald" fontSize="50px">
-                GRAIPFRUT
+                LEADRPRO
               </Heading>
-              <Text fontFamily="Montserrat" fontSize="18px" textAlign="left">
-                CEO / Owner. <br />
-                Graipfrut is an Ai-driven Web Development agency <br />
-                building high quality, custom websites, e-commerce shops and
-                mobile apps precisely catered to your unique business needs.
+              <Text
+                fontFamily="Montserrat"
+                fontSize="18px"
+                maxW="500px"
+                textAlign="left"
+              >
+                Founding Software Engineer. <br />
+                LeadrPro is the very first B2B Software Marketplace connecting
+                Buyers of Software with Sellers of SaaS Products through video
+                sales calls.
               </Text>
+
               <VStack spacing="20px" align="left">
                 <Button
                   as="a"
-                  href="https://www.graipfrut.com/"
+                  href="https://www.leadrpro.com/"
                   target="_blank"
-                  w="250px"
                   mt="10px"
                   bg="none"
                   border="2px solid"
                   rounded="68px"
                   px="40px"
                   py="25px"
+                  w="250px"
                   lineHeight="30px"
                   _hover={{
                     bg: 'none',
@@ -56,12 +65,13 @@ const Project1Mobile = ({ project1Ref, scrollToProject2 }) => {
                 >
                   SHOW ME
                 </Button>
+
                 <Button
-                  w="250px"
+                  mt="10px"
                   bg="none"
                   border="2px solid"
                   rounded="68px"
-                  px="40px"
+                  w="250px"
                   py="25px"
                   lineHeight="30px"
                   _hover={{
@@ -69,7 +79,7 @@ const Project1Mobile = ({ project1Ref, scrollToProject2 }) => {
                     transform: 'scale(1.08)',
                   }}
                   textAlign="center"
-                  onClick={() => scrollToProject2()}
+                  onClick={() => scrollToProject3()}
                 >
                   NEXT
                 </Button>
@@ -82,4 +92,4 @@ const Project1Mobile = ({ project1Ref, scrollToProject2 }) => {
   );
 };
 
-export default Project1Mobile;
+export default Project2Mobile;
