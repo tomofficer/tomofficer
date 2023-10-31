@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import {
   Box,
   Button,
@@ -16,7 +16,30 @@ const AboutMobile = ({ aboutRef, scrollToProject1 }) => {
   const [isSmallerThan375] = useMediaQuery('(max-width: 375px)');
 
   // Define your padding values for each breakpoint
-  const marginTop = isSmallerThan375 ? '20px' : '80px';
+  const marginTop = isSmallerThan375 ? '20px' : '50px';
+
+  // State variable to track whether the screen size is below 375px
+  const [isScreenBelow375, setIsScreenBelow375] = useState(false);
+
+  useEffect(() => {
+    // Check the initial screen width
+    const initialScreenBelow375 = window.innerWidth <= 375;
+    setIsScreenBelow375(initialScreenBelow375);
+
+    // Add an event listener to track screen width changes
+    const handleResize = () => {
+      const screenBelow375 = window.innerWidth <= 375;
+      setIsScreenBelow375(screenBelow375);
+    };
+
+    // Attach the event listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <section id="About">
@@ -34,12 +57,56 @@ const AboutMobile = ({ aboutRef, scrollToProject1 }) => {
         }}
       >
         {/* Content of the component */}
-        <Box ml="20px" mt={marginTop} textAlign="left">
-          <VStack align={'left'} spacing="15px" color="teal.300">
-            <HStack>
+        {isScreenBelow375 ? (
+          <Box ml="20px" mt={marginTop} textAlign="left">
+            <VStack align={'left'} spacing="15px" color="teal.300">
+              <HStack>
+                <Heading fontFamily="Oswald" fontSize="40px" pr="25px">
+                  HI, I'M TOM.
+                </Heading>
+                <Button
+                  zIndex="1"
+                  maxW="100px"
+                  mt="10px"
+                  bg="none"
+                  border="2px solid"
+                  rounded="68px"
+                  px="60px"
+                  py="25px"
+                  lineHeight="30px"
+                  _hover={{
+                    bg: 'none',
+                    transform: 'scale(1.08)',
+                  }}
+                  textAlign="center"
+                  onClick={() => scrollToProject1()}
+                >
+                  <Flex align="center">
+                    SHOW ME
+                    {/* <Icon boxSize="40px" as={BsArrowDownShort} mr="4px" /> */}
+                  </Flex>
+                </Button>
+              </HStack>
+
+              <Text fontFamily="Montserrat" fontSize="16px">
+                I run a Web Dev Agency called Graipfrut. <br />I build modern,
+                elegant websites. <br />
+                And I'm open for hire.
+              </Text>
+            </VStack>
+          </Box>
+        ) : (
+          <Box ml="20px" mt={marginTop} textAlign="left">
+            <VStack align={'left'} spacing="15px" color="teal.300">
               <Heading fontFamily="Oswald" fontSize="40px" pr="25px">
                 HI, I'M TOM.
               </Heading>
+
+              <Text fontFamily="Montserrat" fontSize="16px">
+                I run a Web Dev Agency called Graipfrut. <br />I build modern,
+                elegant websites. <br />
+                And I'm open for hire.
+              </Text>
               <Button
                 zIndex="1"
                 maxW="100px"
@@ -62,15 +129,9 @@ const AboutMobile = ({ aboutRef, scrollToProject1 }) => {
                   {/* <Icon boxSize="40px" as={BsArrowDownShort} mr="4px" /> */}
                 </Flex>
               </Button>
-            </HStack>
-
-            <Text fontFamily="Montserrat" fontSize="16px">
-              I run a Web Dev Agency called Graipfrut. <br />I build modern,
-              elegant websites. <br />
-              And I'm open for hire.
-            </Text>
-          </VStack>
-        </Box>
+            </VStack>
+          </Box>
+        )}
 
         {/* Image in the bottom right corner */}
         <Image
