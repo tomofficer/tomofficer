@@ -4,12 +4,10 @@ import {
   Center,
   Text,
   Heading,
-  Icon,
   Button,
   VStack,
-  HStack,
-  Flex,
   css,
+  useMediaQuery,
 } from '@chakra-ui/react';
 import landing0 from '../imageAssets/landing0.jpg';
 import landing1 from '../imageAssets/landing1.jpg';
@@ -96,6 +94,12 @@ const LandingMobile = ({ scrollToAbout }) => {
     return () => clearInterval(intervalId);
   }, []);
 
+  // Use useMediaQuery to check the screen width
+  const [isSmallerThan375] = useMediaQuery('(max-width: 375px)');
+
+  // Define your padding values for each breakpoint
+  const marginTop = isSmallerThan375 ? '150px' : '300px';
+
   return (
     <>
       <Box width="100vw" height="100vh" position="relative">
@@ -130,7 +134,7 @@ const LandingMobile = ({ scrollToAbout }) => {
           transform="translate(-50%, -50%)"
         >
           {/* Your content */}
-          <VStack mt="250px" textAlign="center">
+          <VStack mt={marginTop} textAlign="center">
             <Heading fontFamily="Oswald" fontSize="75px" color="white">
               TOM OFFICER
             </Heading>

@@ -8,16 +8,16 @@ import {
   Flex,
   Image,
   HStack,
+  useMediaQuery,
 } from '@chakra-ui/react';
 
 const AboutMobile = ({ aboutRef, scrollToProject1 }) => {
-  //Dynamic padding :
-  // Get the screen height
-  const screenHeight = window.innerHeight;
+  // Use useMediaQuery to check the screen width
+  const [isSmallerThan375] = useMediaQuery('(max-width: 375px)');
 
-  // Calculate padding as a percentage of screen height
-  const paddingPercentage = 10; // Adjust as needed
-  const topMargin = `${(screenHeight * paddingPercentage) / 200}px`;
+  // Define your padding values for each breakpoint
+  const marginTop = isSmallerThan375 ? '20px' : '80px';
+
   return (
     <section id="About">
       {/* Container for the component */}
@@ -34,7 +34,7 @@ const AboutMobile = ({ aboutRef, scrollToProject1 }) => {
         }}
       >
         {/* Content of the component */}
-        <Box ml="20px" mt={topMargin} textAlign="left">
+        <Box ml="20px" mt={marginTop} textAlign="left">
           <VStack align={'left'} spacing="15px" color="teal.300">
             <HStack>
               <Heading fontFamily="Oswald" fontSize="40px" pr="25px">
