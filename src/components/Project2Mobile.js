@@ -13,7 +13,7 @@ const Project2Mobile = ({ project2Ref, scrollToProject3 }) => {
   const [isSmallerThan375] = useMediaQuery('(max-width: 375px)');
 
   // Define your padding values for each breakpoint
-  const paddingTop = isSmallerThan375 ? '80px' : '220px';
+  const paddingTop = isSmallerThan375 ? '80px' : '270px';
   const paddingBottom = isSmallerThan375 ? '30px' : '30px';
 
   return (
