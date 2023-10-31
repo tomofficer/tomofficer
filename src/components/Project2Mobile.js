@@ -1,7 +1,21 @@
-import { Box, Button, Text, VStack, Heading, Flex } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Text,
+  VStack,
+  Heading,
+  useMediaQuery,
+} from '@chakra-ui/react';
 import leadrproBg from '../imageAssets/project2Bg.jpg';
 
 const Project2Mobile = ({ project2Ref, scrollToProject3 }) => {
+  // Use useMediaQuery to check the screen width
+  const [isSmallerThan375] = useMediaQuery('(max-width: 375px)');
+
+  // Define your padding values for each breakpoint
+  const paddingTop = isSmallerThan375 ? '80px' : '250px';
+  const paddingBottom = isSmallerThan375 ? '30px' : '250px';
+
   return (
     <>
       <section id="Project1">
@@ -18,14 +32,14 @@ const Project2Mobile = ({ project2Ref, scrollToProject3 }) => {
         >
           {/* Text and button content */}
           <Box
-            top="35%"
+            top={paddingTop}
             left="0%"
             position="relative"
             zIndex="2"
             color="white"
             background="rgba(0, 0, 0, 0.7)"
             px="20px"
-            pb="30px"
+            pb={paddingBottom}
             pt="10px"
           >
             <VStack spacing="20px" align="left">
