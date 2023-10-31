@@ -1,7 +1,20 @@
-import { Box, Text, VStack, Heading, Flex, Button } from '@chakra-ui/react';
+import {
+  Box,
+  Text,
+  VStack,
+  Heading,
+  Button,
+  useMediaQuery,
+} from '@chakra-ui/react';
 import whiteDogBg from '../imageAssets/project3Bg.jpg';
 
 const Project3Mobile = ({ project3Ref, scrollToContact2 }) => {
+  // Use useMediaQuery to check the screen width
+  const [isSmallerThan375] = useMediaQuery('(max-width: 375px)');
+
+  // Define your padding values for each breakpoint
+  const paddingTop = isSmallerThan375 ? '80px' : '220px';
+  const paddingBottom = isSmallerThan375 ? '30px' : '30px';
   return (
     <>
       <section id="Project3">
@@ -19,13 +32,13 @@ const Project3Mobile = ({ project3Ref, scrollToContact2 }) => {
         >
           {/* Text and button content */}
           <Box
-            top="30%"
+            top={paddingTop}
             left="0%"
             position="relative"
             zIndex="2"
             background="rgba(0, 0, 0, 0.7)"
             px="20px"
-            pb="30px"
+            pb={paddingBottom}
             pt="10px"
           >
             <VStack align={'left'} spacing="30px" color="blue.400">
