@@ -11,6 +11,13 @@ import {
 } from '@chakra-ui/react';
 
 const AboutMobile = ({ aboutRef, scrollToProject1 }) => {
+  //Dynamic padding :
+  // Get the screen height
+  const screenHeight = window.innerHeight;
+
+  // Calculate padding as a percentage of screen height
+  const paddingPercentage = 10; // Adjust as needed
+  const topMargin = `${(screenHeight * paddingPercentage) / 200}px`;
   return (
     <section id="About">
       {/* Container for the component */}
@@ -27,7 +34,7 @@ const AboutMobile = ({ aboutRef, scrollToProject1 }) => {
         }}
       >
         {/* Content of the component */}
-        <Box ml="20px" mt="20px" textAlign="left">
+        <Box ml="20px" mt={topMargin} textAlign="left">
           <VStack align={'left'} spacing="15px" color="teal.300">
             <HStack>
               <Heading fontFamily="Oswald" fontSize="40px" pr="25px">

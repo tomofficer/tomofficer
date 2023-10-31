@@ -1,6 +1,21 @@
-import { Box, VStack, Heading, Text, Button } from '@chakra-ui/react';
+import {
+  Box,
+  VStack,
+  Heading,
+  Text,
+  Button,
+  useMediaQuery,
+} from '@chakra-ui/react';
 import graipfrutBg from '../imageAssets/project1Bg.jpg';
+
 const Project1Mobile = ({ project1Ref, scrollToProject2 }) => {
+  // Use useMediaQuery to check the screen width
+  const [isSmallerThan375] = useMediaQuery('(max-width: 375px)');
+
+  // Define your padding values for each breakpoint
+  const paddingTop = isSmallerThan375 ? '80px' : '250px';
+  const paddingBottom = isSmallerThan375 ? '30px' : '250px';
+
   return (
     <>
       <section id="Project1">
@@ -16,13 +31,13 @@ const Project1Mobile = ({ project1Ref, scrollToProject2 }) => {
         >
           {/* Text and button content */}
           <Box
-            top="30%"
+            top={paddingTop} // Apply dynamic padding-top
             left="0%"
             position="relative"
             zIndex="2"
             background="rgba(0, 0, 0, 0.7)"
             px="20px"
-            pb="30px"
+            pb={paddingBottom} // Apply dynamic padding-bottom
             pt="10px"
           >
             <VStack spacing="20px" color="yellow.300" align="left">

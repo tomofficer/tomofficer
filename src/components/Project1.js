@@ -20,7 +20,7 @@ const Project1 = ({ project1Ref, scrollToProject2 }) => {
           <Box top="30%" left="50%" position="relative" zIndex="2">
             <VStack align={'left'} spacing="30px" color="yellow.300">
               <Heading fontFamily="Oswald" fontSize="50px">
-                S GRAIPFRUT
+                GRAIPFRUT
               </Heading>
               <Text fontFamily="Montserrat" fontSize="18px" maxW="500px">
                 CEO / Owner. <br />
