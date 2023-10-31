@@ -7,7 +7,7 @@ import {
   Text,
   Flex,
   Image,
-  Center,
+  HStack,
 } from '@chakra-ui/react';
 
 const AboutMobile = ({ aboutRef, scrollToProject1 }) => {
@@ -28,38 +28,40 @@ const AboutMobile = ({ aboutRef, scrollToProject1 }) => {
       >
         {/* Content of the component */}
         <Box ml="20px" mt="20px" textAlign="left">
-          <VStack align={'left'} spacing="20px" color="teal.300">
-            <Heading fontFamily="Oswald" fontSize="50px">
-              HI, I'M TOM.
-            </Heading>
-            <Text fontFamily="Montserrat" fontSize="20px">
+          <VStack align={'left'} spacing="15px" color="teal.300">
+            <HStack>
+              <Heading fontFamily="Oswald" fontSize="40px" pr="25px">
+                HI, I'M TOM.
+              </Heading>
+              <Button
+                zIndex="1"
+                maxW="100px"
+                mt="10px"
+                bg="none"
+                border="2px solid"
+                rounded="68px"
+                px="60px"
+                py="25px"
+                lineHeight="30px"
+                _hover={{
+                  bg: 'none',
+                  transform: 'scale(1.08)',
+                }}
+                textAlign="center"
+                onClick={() => scrollToProject1()}
+              >
+                <Flex align="center">
+                  SHOW ME
+                  {/* <Icon boxSize="40px" as={BsArrowDownShort} mr="4px" /> */}
+                </Flex>
+              </Button>
+            </HStack>
+
+            <Text fontFamily="Montserrat" fontSize="16px">
               I run a Web Dev Agency called Graipfrut. <br />I build modern,
               elegant websites. <br />
               And I'm open for hire.
             </Text>
-
-            <Button
-              zIndex="1"
-              maxW="150px"
-              mt="10px"
-              bg="none"
-              border="2px solid"
-              rounded="68px"
-              px="60px"
-              py="25px"
-              lineHeight="30px"
-              _hover={{
-                bg: 'none',
-                transform: 'scale(1.08)',
-              }}
-              textAlign="center"
-              onClick={() => scrollToProject1()}
-            >
-              <Flex align="center">
-                LET'S GO
-                {/* <Icon boxSize="40px" as={BsArrowDownShort} mr="4px" /> */}
-              </Flex>
-            </Button>
           </VStack>
         </Box>
 

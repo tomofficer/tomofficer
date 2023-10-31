@@ -130,7 +130,7 @@ const LandingMobile = ({ scrollToAbout }) => {
           transform="translate(-50%, -50%)"
         >
           {/* Your content */}
-          <VStack mt="380px" textAlign="center">
+          <VStack mt="250px" textAlign="center">
             <Heading fontFamily="Oswald" fontSize="75px" color="white">
               TOM OFFICER
             </Heading>
