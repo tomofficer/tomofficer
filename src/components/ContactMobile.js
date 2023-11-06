@@ -241,7 +241,7 @@ const ContactMobile = ({ contact2Ref }) => {
                   </Button>
                   <Button
                     as="a"
-                    href="/"
+                    href="https://docs.google.com/document/d/1wHPFv9bN7Xb7VH5bfbh-WzJ4pKXYBIPV4hLfuUtW808/edit#heading=h.5arnk9c8ua6d"
                     target="_blank"
                     maxW="300px"
                     mt="10px"

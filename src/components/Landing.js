@@ -72,8 +72,8 @@ const Landing = ({ scrollToAbout }) => {
   //background image swapper
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    landing0,
     landing1,
+    landing0,
     landing2,
     landing3,
     landing4,
