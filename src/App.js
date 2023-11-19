@@ -14,6 +14,7 @@ import Contact from './components/Contact';
 import ContactMobile from './components/ContactMobile';
 import Footer from './components/Footer';
 import FooterMobile from './components/FooterMobile';
+import FetchTesting from './components/FetchTesting';
 
 function App() {
   //useRef
@@ -70,11 +71,12 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Box style={{ backgroundColor: 'black' }} overflow={'hidden'}>
-        {windowWidth < breakpoint ? (
+        <FetchTesting />
+        {/* {windowWidth < breakpoint ? (
           <LandingMobile scrollToAbout={scrollToAboutHandle} />
         ) : (
           <Landing scrollToAbout={scrollToAboutHandle} />
-        )}
+        )} */}
 
         {windowWidth < breakpoint ? (
           <AboutMobile
