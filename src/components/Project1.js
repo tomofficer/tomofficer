@@ -11,7 +11,7 @@ const Project1 = ({ project1Ref, scrollToProject2 }) => {
           bgPosition="center"
           bgRepeat="no-repeat"
           width="100%"
-          height="95vh"
+          height="85vh"
           opacity="100%"
           position="relative" // Set a relative position
           zIndex="1" // Ensure the background image is at the back

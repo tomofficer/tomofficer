@@ -71,12 +71,11 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Box style={{ backgroundColor: 'black' }} overflow={'hidden'}>
-        <FetchTesting />
-        {/* {windowWidth < breakpoint ? (
+        {windowWidth < breakpoint ? (
           <LandingMobile scrollToAbout={scrollToAboutHandle} />
         ) : (
           <Landing scrollToAbout={scrollToAboutHandle} />
-        )} */}
+        )}
 
         {windowWidth < breakpoint ? (
           <AboutMobile
